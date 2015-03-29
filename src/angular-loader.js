@@ -10,10 +10,10 @@ angular.module('angular-loader', [])
             restrict: 'E',
             scope: {
                 type: "@",
-                isLoading: "="
+                show: "="
             },
             template: [
-                '<div ng-show="isLoading" ng-class="type">',
+                '<div ng-show="show" ng-class="type">',
                 '<div class="loader">',
                 '"Loading"',
                 '</div>',
