@@ -5,14 +5,30 @@
     <meta charset="UTF-8">
     <title>Angular-loader example</title>
     <link rel="stylesheet" type="text/css" href="css/build/angular-loader.min.css" media="screen"/>
+    <style>
+        .show-button{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            z-index: 3000;
+        }
+
+        body {
+            background: rgb(116, 210, 210);
+        }
+    </style>
 </head>
 
 <body ng-controller="loaderCtrl" ng-app="loader-example">
 
-<loader type="load2"
-        show="isLoading"
-        class="blackout">
+<loader type="load{{i}}"
+        class="blackout"
+        show="isLoading">
 </loader>
+
+<button ng-click="showLoader()" class="show-button"></button>
 
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="src/build/angular-loader.min.js"></script>
@@ -20,7 +36,19 @@
     var app = angular.module("loader-example", ["angular-loader"])
             .controller("loaderCtrl", ['$scope', function ($scope) {
 
-                $scope.isLoading = true;
+                $scope.i = 0;
+                $scope.isLoading = false;
+
+                $scope.showLoader = function () {
+
+                    if (!$scope.isLoading)
+                    {
+                        $scope.i = ($scope.i  % 7) + 1;
+                    }
+
+                    $scope.isLoading = !$scope.isLoading;
+
+                }
 
             }]);
 </script>
