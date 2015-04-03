@@ -17,3 +17,8 @@ This is a directive that provide a collection of loading spinners animated with 
 ## Classes 
 
 * blackout - centring spinner and add blackout background.
+
+## Check out example.html
+
+* Press left button to start loading.
+* Every press is changing loader style.
