@@ -4,7 +4,7 @@ This is a directive that provide a collection of loading spinners animated with 
 
 ```html
   <loader type="load1"
-        is-loading="isLoading"
+        show="isLoading"
         class="blackout">
   </loader>
 ```
